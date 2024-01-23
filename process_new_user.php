@@ -39,6 +39,8 @@ if ($result->num_rows > 0) {
         } else {
             $sql = "INSERT INTO users (user_id, user_name, password) VALUES (null, '$new_username', '$hashed_password')";
             $result = $mysqli->query($sql) or die(mysqli_error($mysqli));
+            mysqli_close($mysqli);
+            
             if ($result) {
                 echo "Registration success!";
             } else {
