@@ -44,7 +44,7 @@ $stmt->bind_result($userid, $fetched_name, $fetched_pass);
         $_SESSION['username'] = $username;        
         $_SESSION['userid'] = $userid;  
 
-        mysqli_close($mysqli);
+        $mysqli->close();
         exit;
     }
     else {
