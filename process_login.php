@@ -43,6 +43,8 @@ $stmt->bind_result($userid, $fetched_name, $fetched_pass);
         echo "<p>Login success</p>"; 
         $_SESSION['username'] = $username;        
         $_SESSION['userid'] = $userid;  
+
+        mysqli_close($mysqli);
         exit;
     }
     else {
